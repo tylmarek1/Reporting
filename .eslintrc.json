@@ -1,0 +1,67 @@
+/* eslint-disable */
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["airbnb", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "simple-import-sort"],
+  "rules": {
+    "import/extensions": ["error", "never", { "json": "always", "generated": "always" }],
+    "import/no-unresolved": ["off"],
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          [".*react.*"],
+          ["^[^./@].*"],
+          [".*@mdi.*"],
+          [".*types.*"],
+          [".*models.*"],
+          [".*store.*"],
+          [".*.utils.*"],
+          [".*.helpers.*"],
+          [".*.hooks.*"],
+          [".*._core.*"],
+          ["others", "."],
+          [".*styles.*"],
+          ["[./]*_.*"],
+          [".*components.*"],
+          ["^\\./"]
+        ]
+      }
+    ],
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+    "no-use-before-define": "off",
+    "func-names": ["error", "as-needed"],
+    "react/function-component-definition": [
+      "warn",
+      { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+    "react/require-default-props": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["warn", { "vars": "all", "argsIgnorePattern": "^_*$" }],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "default-param-last": "off",
+    "no-undef": "off",
+    "no-console": ["warn", { "allow": ["debug"] }],
+    "react/destructuring-assignment": "off",
+    "react/prop-types": "off",
+    "radix": ["warn", "as-needed"],
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-fragments": "off",
+    "react/jsx-no-duplicate-props": ["error", { "ignoreCase": false }],
+    "arrow-body-style": ["warn", "as-needed"]
+  }
+}

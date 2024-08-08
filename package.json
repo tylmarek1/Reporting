@@ -32,6 +32,9 @@
   },
   "scripts": {
     "serve": "nodemon --exec ts-node src/index.ts",
+    "build:tsc": "tsc",
+    "build:extra": "tsc src/extra.ts --outDir build",
+    "build:all": "npm run build:tsc && npm run build:extra",
     "build": "tsc --build",
     "serve:build": "node build/index.js"
   },

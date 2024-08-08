@@ -1,9 +1,10 @@
 export default interface AddressTemplateModel {
-    Name: string;
-    Street: string;
-    ZipCode: string;
-    City: string;
-    Country: string;
-    Email: string;
-    Phone: string;
+    name: string;
+    street: string;
+    zipCode: string;
+    city: string;
+    country: string;
+    countryCode: string;
+    email: string;
+    phone: string;
 }

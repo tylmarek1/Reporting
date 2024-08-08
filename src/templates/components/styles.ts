@@ -57,9 +57,9 @@ const styles = StyleSheet.create({
      * minWidth = 0 je z důvodu aby nedocházelo k přetečení obsahu při dlouhých textech.
      */
     minWidth: 0,
-    wordWrap: "break-word",
+    maxHeight: "100%",
+    maxWidth: "100%",
   },
-
 
   nestedTableWithoutBorder: {
     /**

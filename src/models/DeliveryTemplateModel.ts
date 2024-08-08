@@ -6,6 +6,12 @@ export default interface DeliveryTemplateModel {
   //header
   //warehouse
   warehouse: AddressTemplateModel;
+      /// <summary>
+    /// Webová adresa skladu.
+    /// </summary>
+  warehouseWww: string;
+  warehouseLogo: string;
+  warehouseSignature: string;
   //customer
   customer: AddressTemplateModel;
   //recipient (delivery address)

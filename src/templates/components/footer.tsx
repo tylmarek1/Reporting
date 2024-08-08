@@ -2,12 +2,10 @@ import { Image, Text, View } from "@react-pdf/renderer";
 import React, { Fragment } from "react";
 
 import DeliveryTemplateModel from "../../models/DeliveryTemplateModel";
+import styles from "./styles";
 
 import { WhiteSpace } from './header';
-import { formatNumber } from "../../utils/number";
-import styles from "../components/styles";
-import { DataHeader, DataNormal, DataDate, DataNumber} from "../components/data";
-import { Razitko } from "./image";
+import { DataHeader, DataNormal, DataNumber} from "./data";
 
 type RenderComponentProps = {
   data: DeliveryTemplateModel;
@@ -33,8 +31,8 @@ const UnitTableBody = (props: RenderComponentProps) => {
         <Fragment>
         {units.map(unit => (
           <View wrap={false} key={`dataItemRow_${unit.unitCode}`} style={styles.tableRow}>
-            <DataNormal flexV={1} item={unit.unitCode}/>
-            <DataNormal flexV={2} item={unit.unitDescription}/>
+            <DataNormal flexV={1} breakeLength={45} item={unit.unitCode}/>
+            <DataNormal flexV={2} breakeLength={90} item={unit.unitDescription}/>
             <DataNumber flexV={1} item={unit.total}/>
           </View>
         ))}
@@ -60,7 +58,7 @@ const TotalRow: React.FC<{ value: number; itemV: string }> = ({ value, itemV }) 
                 <Text>{itemV}</Text>
             </View>
         </View>
-        <DataNormal flexV={2} item="" />
+        <DataNormal breakeLength={30} flexV={2} item="" />
         <DataNumber flexV={1} item={value} />
     </View>
 );
@@ -90,7 +88,7 @@ const CreatedBy = (props: RenderComponentProps) => {
             <Text>Name: {data.createdName}</Text>
             <Text>Date: {data.createdDate}</Text>
             <Text>Stamp:</Text>
-            <Razitko />
+            <Image style={{maxHeight: 50, maxWidth: 125}} src={`data:image/png;base64,${data.warehouseSignature}`} />
             <Text>Signature:</Text>
         </View>
     );
